@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get 'main_pages/about'
   
-  get 'main_pages/calc_count'
+  post 'main_pages/calc_count'
   
   resources :counters
 

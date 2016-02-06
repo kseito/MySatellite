@@ -1,4 +1,6 @@
 class MainPagesController < ApplicationController
+  protect_from_forgery except: :calc_count
+
   def home
   end
 

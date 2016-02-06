@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get 'main_pages/about'
   
+  get 'main_pages/calc_count'
+  
   resources :counters
 
   # The priority is based upon order of creation: first created -> highest priority.

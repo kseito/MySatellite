@@ -17,11 +17,11 @@ class MainPagesController < ApplicationController
     json = JSON.parse(request.body.read)
     priority = json['event_data']['priority']
     case priority
-    when 1 then
+    when 4 then
       count = 12
-    when 2 then
-      count = 4
     when 3 then
+      count = 4
+    when 2 then
       count = 2
     else
       count = 1

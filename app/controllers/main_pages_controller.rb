@@ -1,7 +1,7 @@
 require 'json'
 
 class MainPagesController < ApplicationController
-  protect_from_forgery except: :calc_count
+  protect_from_forgery except: [:calc_count, :get_count]
 
   def home
   end
@@ -43,4 +43,22 @@ class MainPagesController < ApplicationController
     end
     
   end
+  
+  def get_game_count
+    @counter = Counter.find_by_id(FIXED_ID)
+    respond_to do |format|
+      format.html { render json: @counter}
+    end
+  end
+  
+  def consume_game_count
+    @counter = Counter.find_by_id(FIXED_ID)
+    render_error(404, "resource not found") and return unless @counter
+    @counter.count = @counter.count - 4
+    @counter.save!
+    respond_to do |format|
+      format.html { render json: @counter}
+    end
+  end
+  
 end

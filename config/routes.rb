@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   
   post 'main_pages/calc_count'
   
+  get 'main_pages/get_game_count'
+  
+  put 'main_pages/consume_game_count'
+  
   resources :counters
 
   # The priority is based upon order of creation: first created -> highest priority.

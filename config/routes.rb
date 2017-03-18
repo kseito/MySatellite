@@ -1,18 +1,18 @@
 Rails.application.routes.draw do
   root :to => 'main_pages#home'
-  
+
   get 'main_pages/home'
 
   get 'main_pages/help'
 
   get 'main_pages/about'
-  
+
   post 'main_pages/calc_count'
-  
+
   get 'main_pages/get_game_count'
-  
+
   put 'main_pages/consume_game_count'
-  
+
   resources :counters
 
   # The priority is based upon order of creation: first created -> highest priority.
